@@ -6,3 +6,9 @@
 #or -> ||
 #not -> !
 
+ma_liste = list((0,1))
+
+print("hello")
+print()
+print("hello")
+

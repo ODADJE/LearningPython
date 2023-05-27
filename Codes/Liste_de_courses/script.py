@@ -1,5 +1,11 @@
 import sys
+import os
+import json
+
+chemin_fichier = os.path.join(os.path.dirname(__file__),"liste.json")
 course_liste = []
+with open(chemin_fichier, "r") as f:
+    course_liste.extend(json.load(f))
 while True:
     print("_____________________________________________")
     print("Choisissez parmi les 5 options suivantes : ")
@@ -39,4 +45,6 @@ while True:
         print("la liste de course a ete videe.")
 
     elif choix_menu == "5":
+        with open(chemin_fichier, "w") as f:
+            json.dump(course_liste,f,indent=4)
         sys.exit()
